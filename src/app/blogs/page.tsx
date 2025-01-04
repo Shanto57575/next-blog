@@ -27,10 +27,13 @@ const Blogs = () => {
 
 	const allBlogs = async () => {
 		try {
-			const apiResponse = await fetch("http://localhost:3000/api/get-blogs", {
-				method: "GET",
-				cache: "no-store",
-			});
+			const apiResponse = await fetch(
+				"https://next-blog-murex-xi.vercel.app/api/get-blogs",
+				{
+					method: "GET",
+					cache: "no-store",
+				}
+			);
 			const results = await apiResponse.json();
 			if (results.success) {
 				setListOfBlogs(results.data);
